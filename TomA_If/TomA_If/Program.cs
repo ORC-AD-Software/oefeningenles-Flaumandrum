@@ -29,7 +29,39 @@ namespace TomA_If
             // maake scherm leeg 
             Console.Clear();
 
+            if (_keuze == 1)
+            {
+                // geef de juiste tekst
+                Console.WriteLine("De prijs is 10 EUR");
 
+                Console.WriteLine("Druk op enter om af te sluiten");
+                Console.ReadKey();
+
+            }
+            else if(_keuze == 2)
+            {
+                // geef de juiste tekst
+                Console.WriteLine("De prijs is 8 EUR");
+
+                Console.WriteLine("Druk op enter om af te sluiten");
+                Console.ReadKey();
+            }
+            else if (_keuze == 3)
+            {
+                // geef de juiste tekst
+                Console.WriteLine("De prijs is 16 EUR");
+
+                Console.WriteLine("Druk op enter om af te sluiten");
+                Console.ReadKey();
+            }
+            else
+            {
+                // geef de juiste tekst
+                Console.WriteLine("U gaf geen juiste keuze in");
+
+                Console.WriteLine("Druk op enter om af te sluiten");
+                Console.ReadKey();
+            }
 
 
         }

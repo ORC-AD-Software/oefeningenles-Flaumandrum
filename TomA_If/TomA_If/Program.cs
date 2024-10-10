@@ -62,13 +62,14 @@ namespace TomA_If
                 Console.ReadKey();
 
             }
-            catch 
+            catch (Exception e)
             {
                 // maake scherm leeg 
                 Console.Clear();
 
                 //foutmelding
-                Console.WriteLine("U gaf geen getal in.\n\nDruk op enter om af te sluiten");
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("\n\nU gaf geen getal in.\n\nDruk op enter om af te sluiten");
                 Console.ReadKey();
             }
 

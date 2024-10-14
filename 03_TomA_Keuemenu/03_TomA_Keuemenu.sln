@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_TomA_Keuemenu", "03_TomA_Keuemenu\03_TomA_Keuemenu.csproj", "{1AD405B4-B682-4532-AD56-4DB85C79125E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AD405B4-B682-4532-AD56-4DB85C79125E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD405B4-B682-4532-AD56-4DB85C79125E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD405B4-B682-4532-AD56-4DB85C79125E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD405B4-B682-4532-AD56-4DB85C79125E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C1CD27C-FFF1-4465-95BD-6DD91F2F4071}
+	EndGlobalSection
+EndGlobal

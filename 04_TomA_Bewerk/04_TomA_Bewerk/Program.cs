@@ -17,7 +17,10 @@ namespace _04_TomA_Bewerk
 
             // velden 
             byte _keuze = 0;
-            int _getal1 = 0, _getal2 = 0;
+            int _getal1 = 0, _getal2 = 0, _uitkomst = 0;
+            bool _herhalen = true;
+            String _bewerking = null;
+
             // Programma
 
             //Stap 1: Intro
@@ -30,6 +33,8 @@ namespace _04_TomA_Bewerk
 
             do
             {
+                // Scherm leegmaken 
+                Console.Clear();
 
                 //Stap 2: Toon keuzemenu(optellen, verminderen, vermenigvuldigen, afsluiten)
                 Console.WriteLine("Maak uw keuze uit onderstaand menu:");
@@ -42,18 +47,101 @@ namespace _04_TomA_Bewerk
                     Console.Write("Geef het nummer van uw keuze: ");
                     _keuze = byte.Parse(Console.ReadLine());
 
-                    //Stap 4: Vraag de 2 getallen + opslaan
-                    //Stap 5: bij fout, keer terug naar stap 4
-                    //Stap 6: 
-                    //	Als 1: tel de 2 getalen op
+                    while ( _herhalen)
+                    {
+                        _herhalen = false;
+                        try
+                        {
+                            // Scherm leegmaken 
+                            Console.Clear();
+                            if (_keuze < 4)
+                            {
+                                //Stap 4: Vraag de 2 getallen + opslaan
+                                Console.WriteLine("Geef de 2 getallen waarmee u de bewerking wilt uitvoeren.");
+                                Console.Write("\nGetal 1: ");
+                                _getal1 = int.Parse(Console.ReadLine());
+                                Console.Write("Getal 2: ");
+                                _getal2 = int.Parse(Console.ReadLine());
+                            }
 
-                    //    Als 2: verminder de 2 getallen
-                    //    Als 3: vermenigvuldig de 2 getallen
-                    //Stap 7: Toon de uitkomst.
-                    //Stap 8: wanneer de keuze niet 4 is, ga naar stap 2
+                            // Scherm leegmaken 
+                            Console.Clear();
 
+
+                            //Stap 6: 
+                            //	Als 1: tel de 2 getalen op
+                            if (_keuze == 1)
+                            {
+                                _uitkomst = _getal1 + _getal2;
+                                _bewerking = "+";
+                            }
+                            //    Als 2: verminder de 2 getallen
+                            else if (_keuze == 2)
+                            {
+                                _uitkomst = _getal1 - _getal2;
+                                _bewerking = "-";
+                            }
+                            //    Als 3: vermenigvuldig de 2 getallen
+                            else if (_keuze == 3)
+                            {
+                                _uitkomst = _getal1 * _getal2;
+                                _bewerking = "x";
+                            }
+                            // Als 4: Afsluiten 
+                            else if (_keuze == 4)
+                            {
+                                // afsluite tekst
+                                Console.WriteLine("U koos om af te sluiten. \nDag en tot de volgende keer.");
+                                Console.WriteLine("\nDruk op een toets om af te sluiten.");
+                                Console.ReadKey();
+                            }
+
+                            else
+                            {
+                                // Scherm leegmaken 
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen juiste keuze in");
+
+                                Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
+                            }
+
+                            //Stap 7: Toon de uitkomst.
+                            if (_keuze < 4)
+                            {
+                                // Scherm leegmaken 
+                                Console.Clear();
+
+                                // uitkomst tekst
+                                Console.WriteLine($"{_getal1.ToString()} {_bewerking} {_getal2.ToString()} = {_uitkomst.ToString()}");
+
+                                Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
+                            }
+
+
+                        }
+
+                        //Stap 5: bij fout, keer terug naar stap 4
+                        catch
+                        {
+                            // Scherm leegmaken 
+                            Console.Clear();
+
+                            // Foutmelding
+                            Console.WriteLine("U gaf geen getal in.");
+
+                            Console.WriteLine("\nDruk op een toets om opnieuw getallen in te geven.");
+                            Console.ReadKey();
+
+                            _herhalen = true;
+                        }
+
+                    }
                 }
-                catch 
+                catch
                 {
                     // Scherm leegmaken 
                     Console.Clear();
@@ -65,6 +153,7 @@ namespace _04_TomA_Bewerk
                     Console.ReadKey();
                 }
 
+                //Stap 8: wanneer de keuze niet 4 is, ga naar stap 2
             } while (_keuze != 4);
 
         }

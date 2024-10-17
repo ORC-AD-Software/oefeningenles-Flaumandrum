@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,11 +29,11 @@ namespace _04_TomA_Bewerk
             Console.WriteLine("\nDruk op een toets om verder te gaan.");
             Console.ReadKey();
 
-            // Scherm leegmaken 
-            Console.Clear();
 
             do
             {
+                //reset lus variabelen 
+                _herhalen = true;
                 // Scherm leegmaken 
                 Console.Clear();
 

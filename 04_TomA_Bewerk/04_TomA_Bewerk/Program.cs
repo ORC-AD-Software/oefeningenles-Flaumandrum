@@ -19,7 +19,7 @@ namespace _04_TomA_Bewerk
             // velden 
             byte _keuze = 0;
             int _getal1 = 0, _getal2 = 0, _uitkomst = 0;
-            bool _herhalen = true;
+            bool _herhalen = true, _herhalen2 = true;
             String _bewerking = null;
 
             // Programma
@@ -34,6 +34,7 @@ namespace _04_TomA_Bewerk
             {
                 //reset lus variabelen 
                 _herhalen = true;
+
                 // Scherm leegmaken 
                 Console.Clear();
 
@@ -95,6 +96,9 @@ namespace _04_TomA_Bewerk
                                 Console.WriteLine("U koos om af te sluiten. \nDag en tot de volgende keer.");
                                 Console.WriteLine("\nDruk op een toets om af te sluiten.");
                                 Console.ReadKey();
+
+                                break;
+
                             }
 
                             else
@@ -155,7 +159,10 @@ namespace _04_TomA_Bewerk
                 }
 
                 //Stap 8: wanneer de keuze niet 4 is, ga naar stap 2
-            } while (_keuze != 4);
+                
+
+
+            } while (_herhalen2);
 
         }
     }

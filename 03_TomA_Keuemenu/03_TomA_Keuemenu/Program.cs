@@ -26,12 +26,12 @@ namespace _03_TomA_Keuemenu
             Console.WriteLine("Welkom op dit keuze menu.");
             Console.WriteLine("Druk op enter om verder te gaan.");
             Console.ReadKey();
-            
+
             do
             {
                 // Scherm leegmaken
                 Console.Clear();
-            
+
                 //Stap 2: Toon het keuze menu(keuze 1, 2, 3 en afsluiten)
                 Console.WriteLine("Maak uw keuze uit onderstaand menu:");
                 Console.WriteLine("\n\n    1) Keuze 1\n    2) Keuze 2" +
@@ -42,7 +42,7 @@ namespace _03_TomA_Keuemenu
 
                     //Stap 3: Vraag de keuze van de gebruiker +opslaan
                     Console.Write("het getal van uw keuze: ");
-                    _keuze= byte.Parse(Console.ReadLine());
+                    _keuze = byte.Parse(Console.ReadLine());
 
                     // Scherm leegmaken
                     Console.Clear();
@@ -69,7 +69,7 @@ namespace _03_TomA_Keuemenu
                     //    Als 4: Sluit af
                     else if (_keuze == 4)
                     {
-                        _herhalen= false;
+                        _herhalen = false;
                         Console.WriteLine("Tot de volgende keer!");
                         Console.WriteLine("\nDruk op een toets om af te sluiten.");
                     }
@@ -81,11 +81,11 @@ namespace _03_TomA_Keuemenu
 
                     }
                     Console.ReadKey();
-                    
-                    
+
+
 
                 }
-                catch 
+                catch
                 {
                     // Scherm leegmaken
                     Console.Clear();
@@ -96,9 +96,9 @@ namespace _03_TomA_Keuemenu
                     Console.ReadKey();
                 }
 
-            //Stap 5: als keuze geen 4 is, spring terug naar stap 2
+                //Stap 5: als keuze geen 4 is, spring terug naar stap 2
             } while (_herhalen);
-            // while (_keuze != 4)
+            //while (_keuze != 4);
         }
     }
 }

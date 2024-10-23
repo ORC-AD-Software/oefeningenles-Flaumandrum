@@ -51,7 +51,8 @@ namespace _06_TomA_WillGet
                     {
                         //	Stap 5: maak willekeurig getal tussen 1 en 25 + toon
                         _rand1 =Convert.ToByte( _rdm.Next(1, 26));
-                        Console.WriteLine($"Uw willekeurig getal: {_rand1.ToString()}");
+                        Console.WriteLine($"Uw willekeurig getal: {_rand1.ToString()}. Sla dit op.");
+                        
                         Console.WriteLine("\nDruk op enter om terug te keren naar het hoofdmenu.");
                         Console.ReadKey();
                     }

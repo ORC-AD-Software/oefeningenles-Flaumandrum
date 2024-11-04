@@ -55,23 +55,54 @@ namespace _09_TomA_Raadspel
                         _raadgetal = Convert.ToByte(_rdm.Next(101));
 
                         //Stap 5: Laat de gebruiker raden +opslaan, max 5 keer, blijf herhalen zolang niet geraden
-
-                        Console.Write("\nGeef uw gok in: ");
-                        _gok = Byte.Parse(Console.ReadLine());
-                        //    Als geraden: toon “Proficiat geraden” +verlaat lus
-                        if(_raadgetal == _gok)
+                        for (int i = 0; i < 5; i++ )
                         {
+                            try { 
+                                Console.Write($"\nPoging {(i+1).ToString()}) Geef uw gok in: ");
+                                _gok = Byte.Parse(Console.ReadLine());
 
-                        }
-                        //    Als raadgetal hoger: Toon het te raden getal is hoger”  
-                        else if (_raadgetal > _gok)
-                        {
+                                //    Als geraden: toon “Proficiat geraden” +verlaat lus
+                                if(_raadgetal == _gok)
+                                {
+                                    Console.Write("\n\nProficiat u hebt het geraden ");
+                                    Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                    Console.ReadKey();
+                                    break;
+                                }
+                                //    Als raadgetal hoger: Toon het te raden getal is hoger”  
+                                else if (_raadgetal > _gok)
+                                {
+                                    Console.Write("\n\nHet te raden getal is hoger! ");
+                                    
+                                }
+                                //	  Als raadgetal lager: Toon het te raden getal is lager”
+                                else
+                                {
+                                    Console.Write("\n\nHet te raden getal is lager! ");
+                                    
+                                }
 
-                        }
-                        //	  Als raadgetal lager: Toon het te raden getal is lager”
-                        else
-                        {
+                                // Geef een andere foutmelding wanneer het de laatste gok is
+                                if(i<4)
+                                {
+                                    Console.WriteLine("\nDruk op een toets om opnieuw te proberen.");
 
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nDit was jouw laatste poing. \nJammer maar helaas.");
+
+                                }
+                                Console.ReadKey();
+
+                            }
+                            catch
+                            {
+                                // foutcode 
+                                Console.WriteLine("\n\nU gaf geen juiste getal in.");
+                                Console.WriteLine("\nDruk op een toets om opnieuw te proberen.");
+                                Console.ReadKey();
+                            }
                         }
                     }
                     //Als 2: Inporteer de tafel van

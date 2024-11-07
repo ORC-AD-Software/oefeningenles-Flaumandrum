@@ -54,6 +54,21 @@ namespace _10_TomA_StrFct1
                 Console.WriteLine("\nDruk op een toets om verder te gaan");
                 Console.ReadKey();
 
+                // Stap 7:	Zet 5 spaties voor en achter de zin. (toon op het scherm)
+                _zin = $"     {_zin}     ";
+                Console.WriteLine($"\nUw zin met 5 spaties ervoor en erna :{_zin}");
+                Console.WriteLine("\nDruk op een toets om verder te gaan");
+                Console.ReadKey();
+
+                // Stap 8:	Verwijder de spaties voor het woord(toon op het scherm)
+                // Stap 9:	Verwijder de spaties achter het woord(toon op het scherm)
+                // Stap 10:	Zet 5 spaties voor en achter de zin. (toon op het scherm)
+                // Stap 11:	Verwijder de spaties voor EN achter het woord in 1 keer(toon op het scherm)
+                // Stap 12:	Zoek of er een e in het woord of de zin zit
+                //a.Als er een e in de zin zit vervang je die door het cijfer 3
+                //b.Als er geen e in het woord zit, zeg je “Niet van toepassing”
+
+
             }
             else
             {

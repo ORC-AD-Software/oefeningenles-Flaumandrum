@@ -16,8 +16,8 @@ namespace _10_TomA_StrFct1
             // Project Stringfuncties 1
 
             // Velden 
-            String _zin = null;
-
+            String _zin = null, _zin2 = null;
+            int a = 0;
             // Programma 
 
             // Stap 1: Vraag een woord of zin
@@ -87,8 +87,7 @@ namespace _10_TomA_StrFct1
                 //a.Als er een e in de zin zit vervang je die door het cijfer 3
                 if(_zin.IndexOf("e")!=-1 || _zin.IndexOf("E") != -1)
                 {
-                    _zin = _zin.Replace("e","3").Replace("E", "3");
-                    Console.WriteLine($"\nUw zin met 'e' en de 'E' vervangen door 3 : {_zin}");
+                    Console.WriteLine($"\nUw zin met 'e' en de 'E' vervangen door 3 : {_zin.Replace("e", "3").Replace("E", "3")}");
                 }
                 //b.Als er geen e in het woord zit, zeg je “Niet van toepassing”
                 else
@@ -98,11 +97,28 @@ namespace _10_TomA_StrFct1
                 Console.WriteLine("\nDruk op een toets om verder te gaan");
                 Console.ReadKey();
 
-                //Vraag de gebruiker een 2de woord in te geven. 
+                //Stap 13: Vraag de gebruiker een 2de woord in te geven. 
+                Console.Write("\nGeef een 2de zin in : ");
+                _zin2 = Console.ReadLine();
+                a = string.Compare(_zin, _zin2);
+
                 //a.Rangschik deze woorden alfabetisch
+                 if(a == -1)
+                {
+                    Console.WriteLine($"\nHier zijn de woorden alfabeitsch gerangschikt : {_zin} , {_zin2}");
+                    
+                }
+                 else if(a == 1)
+                {
+                    Console.WriteLine($"\nHier zijn de woorden alfabeitsch gerangschikt : {_zin2} , {_zin}");
+                }
                 //b.Tenzij ze identiek zijn, dan zeg je: “je gaf hetzelfde woord of dezelfde tekst in” 
-
-
+                else
+                {
+                    Console.WriteLine("\nDeze 2 woorden zijn dezelfde.");
+                }
+                Console.WriteLine("\nDruk op een toets om verder te gaan");
+                Console.ReadKey();
             }
             else
             {

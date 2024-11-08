@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace _10_TomA_StrFct1
 {
@@ -96,6 +97,11 @@ namespace _10_TomA_StrFct1
                 }
                 Console.WriteLine("\nDruk op een toets om verder te gaan");
                 Console.ReadKey();
+
+                //Vraag de gebruiker een 2de woord in te geven. 
+                //a.Rangschik deze woorden alfabetisch
+                //b.Tenzij ze identiek zijn, dan zeg je: “je gaf hetzelfde woord of dezelfde tekst in” 
+
 
             }
             else

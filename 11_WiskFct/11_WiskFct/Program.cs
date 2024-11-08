@@ -38,6 +38,7 @@ namespace _11_WiskFct
                 try
                 {
                     // Stap 3: Vraag keuze + opslaan
+                    Console.Write("\nUw keuze: ");
                     _keuze = byte.Parse( Console.ReadLine() );
 
                     // Als 1: Start programma 

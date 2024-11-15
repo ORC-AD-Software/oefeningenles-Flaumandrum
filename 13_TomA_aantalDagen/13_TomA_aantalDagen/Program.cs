@@ -19,28 +19,71 @@ namespace _13_TomA_aantalDagen
             DateTime _vandaag = DateTime.Today; // Uren zijn in deze oefening niet belangrijk
             TimeSpan _verschil = TimeSpan.Zero; // Dit heb je nodig om te rekenen met datums
 
+            byte _keuze = 0;
+
             // Programma
 
             //Stap 1:  Intro
-            Console.WriteLine()
-            //Stap 2: Toon menu(Datum ingeven, Aantal dagen, afsluiten)
+            Console.WriteLine("Welkom,");
+            Console.WriteLine("Dit programma zegt je hoeveel dagen je moet wachten of dat je te laat bent voor een ingegeven datum.");
+            Console.WriteLine("\nDruk op een toets op verder te gaan ");
 
-            //    Als1: Datum ingeven
+            Console.ReadKey();
+            do
+            {
+                // Scherm leegmaken 
+                Console.Clear();
 
-            //        Stap 3: Vraag een datum + opslaan
+                //Stap 2: Toon menu(Datum ingeven, Aantal dagen, afsluiten)
+                Console.WriteLine("Maak uw keuze uit onderstaand menu: ");
+                
+                // kijk of er een datum is ingegeven
+                if(_dagGbr != DateTime.MinValue)
+                {
+                    Console.WriteLine("\n   1) Geef een datum in\n   2) Bereken het aantal dagen\n   3) Afsluiten");
 
-            //    Als2: Aantal dagen
+                }
+                else
+                {
+                    Console.WriteLine("\n   1) Geef een datum in\n\n   3) Afsluiten");
 
-            //        Stap 4: Kijk of er een datum is ingegeven
-            //        Als  ok:
-            //            Stap 5: Bereken het verschil met vandaag + toon
+                }
+                // Vraag keuze + opslaan
+                _keuze = byte.Parse(Console.ReadLine());
 
-            //        Als niet ok:
-            //            Stap 6: toon foutmelding
+                //    Als1: Datum ingeven
+                if (_keuze == 1)
+                {
+                    // Stap 3: Vraag een datum + opslaan
+                }
 
-            //    Als 3: Afsluiten
-            //        Stap 7: Afsluiten
-            //Stap 8: keer terug naar stap 2 zolang keuze geen 3 is
+
+                //    Als2: Aantal dagen
+                else if (_keuze == 1)
+                {
+                    // Stap 4: Kijk of er een datum is ingegeven
+                    // Als  ok:
+                    // Stap 5: Bereken het verschil met vandaag + toon
+
+                    // Als niet ok:
+                    // Stap 6: toon foutmelding
+
+                }
+
+                //    Als 3: Afsluiten
+                else if (_keuze == 1)
+                {
+                     // Stap 7: Afsluiten
+                }
+
+                else
+                {
+                    // Foutmelding
+                }
+                   
+                //Stap 8: keer terug naar stap 2 zolang keuze geen 3 is
+            } while (_keuze != 3);
+           
 
         }
     }

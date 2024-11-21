@@ -48,39 +48,133 @@ namespace _13_TomA_aantalDagen
                     Console.WriteLine("\n   1) Geef een datum in\n\n   3) Afsluiten");
 
                 }
-                // Vraag keuze + opslaan
-                _keuze = byte.Parse(Console.ReadLine());
 
-                //    Als1: Datum ingeven
-                if (_keuze == 1)
+                try
                 {
-                    // Stap 3: Vraag een datum + opslaan
+
+                    // Vraag keuze + opslaan
+                    _keuze = byte.Parse(Console.ReadLine());
+
+                    // Scherm leegmaken 
+                    Console.Clear();
+
+                    //    Als1: Datum ingeven
+                    if (_keuze == 1)
+                    {
+                        do
+                        {
+                            // Scherm leegmaken 
+                            Console.Clear();
+
+                            try
+                            {
+                                // Stap 3: Vraag een datum + opslaan
+                                Console.Write("Geef een datum in (dd/mm/yyyy):");
+
+                                _dagGbr = DateTime.Parse(Console.ReadLine());
+
+                                // Scherm leegmaken 
+                                Console.Clear();
+
+                                Console.WriteLine("De datum werd ingegeven");
+                                Console.WriteLine("Druk op en toets om terug te keren naar het hoofdmenu");
+
+                                break;
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken 
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen datum in de juiste vorm in.");
+
+                                Console.WriteLine("Druk op en toets om nog eens te proberen");
+                                Console.ReadKey();
+                            }
+
+
+                        }
+                        while (true);
+
+                    }
+
+
+                    //    Als2: Aantal dagen
+                    else if (_keuze == 2)
+                    {
+                        // Stap 4: Kijk of er een datum is ingegeven
+                        // Als  ok:
+                        if (_dagGbr != DateTime.MinValue)
+                        {
+                            if(_vandaag < _dagGbr)
+                            {
+                                // Stap 5: Bereken het verschil met vandaag + toon
+                                _verschil = _dagGbr - _vandaag.add;
+
+                                // Toon de juiste tekst aan de gebruiker
+                                Console.WriteLine($"U moet nog {_verschil.Days} dagen wachten eer het deze dag is.");
+                            
+                            }
+                            else
+                            {
+                                // Stap 5: Bereken het verschil met vandaag + toon
+                                _verschil = _vandaag - _dagGbr;
+
+                                // Toon de juiste tekst aan de gebruiker
+                                Console.WriteLine($"U bent {_verschil.Days} dagen te laat voor deze dag.");
+                            }
+
+                            Console.WriteLine("Druk op en toets om terug te keren naar het hoofdmenu");
+
+
+                        }
+                        // Als niet ok:
+                        else
+                        {
+                            // Stap 6: toon foutmelding
+                            Console.WriteLine("Er werd nog geen datum ingegeven.");
+
+                            Console.WriteLine("Druk op en toets om terug te keren naar het hoofdmenu");
+
+                        }
+
+                        
+
+                    }
+
+                    //    Als 3: Afsluiten
+                    else if (_keuze == 3)
+                    {
+                        // Stap 7: Afsluiten
+                        Console.WriteLine("Bedankt en tot een volgende keer.");
+
+                        Console.WriteLine("Druk op en toets om af te sluiten");
+                    }
+
+                    else
+                    {
+                        // Foutmelding
+                        Console.WriteLine("U gaf geen juiste keuze in.");
+
+                        Console.WriteLine("Druk op en toets om terug te keren naar het hoofdmenu");
+                        
+                    }
+
+                    Console.ReadKey();
                 }
-
-
-                //    Als2: Aantal dagen
-                else if (_keuze == 1)
+                catch
                 {
-                    // Stap 4: Kijk of er een datum is ingegeven
-                    // Als  ok:
-                    // Stap 5: Bereken het verschil met vandaag + toon
+                    // Scherm leegmaken 
+                    Console.Clear();
 
-                    // Als niet ok:
-                    // Stap 6: toon foutmelding
-
-                }
-
-                //    Als 3: Afsluiten
-                else if (_keuze == 1)
-                {
-                     // Stap 7: Afsluiten
-                }
-
-                else
-                {
                     // Foutmelding
+                    Console.WriteLine("U gaf geen getal in.");
+
+                    Console.WriteLine("Druk op en toets om terug te keren naar het hoofdmenu");
+                    Console.ReadKey();
+
                 }
-                   
                 //Stap 8: keer terug naar stap 2 zolang keuze geen 3 is
             } while (_keuze != 3);
            

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace _16_TomA_Kassa
 
             // velden 
             Byte _keuze = 0;
+            double _totaal = 0, _cash = 0, _rest = 0;
 
             // Programma 
             // Stap 1: intro
@@ -46,26 +48,36 @@ namespace _16_TomA_Kassa
                     //Als 1: Programma uitvoeren
                     if ( _keuze == 1 )
                     {
-
                         //Stap 4: Vraag de totaalprijs + opslaan
+                        Console.Write("Geef het totaalbedrag: ");
+                        _totaal = Double.Parse(Console.ReadLine().Replace(".",","));
 
                         //Stap 5: Vraag het ontvangen cashbedrag +opslaan
+                        Console.Write("Hoeveel heb je in cash ontvangen: ");
+                        _cash = Double.Parse(Console.ReadLine().Replace(".", ","));
 
                         //Stap 6: Bereken het restbedrag + opslaan
+                        _rest = _totaal - _cash;
 
                         //Stap 7: Bereken voor elk mogelijk briefje en muntstuk hoeveel de gebruiker moet teruggeven
+                        //Stap 8: En toon het juiste antwoord
 
-                        //Stap 8: Toon het juiste antwoord
+                        // voor 200
+                        Console.WriteLine($"{Math.Floor(_rest/200)} briefjes van 200");
 
                         //Stap 9: Bereken daarna het nieuwe restbedrag
+                        //_rest = _rest - (Math.Floor(_rest / 200) * 200);
+                        _rest = _rest % 200;
 
                     }
                     //Als 2: Afsluiten
-                    else if (_keuze == 1)
+                    else if (_keuze == 2)
                     {
 
                         //Stap 10: Toon afsluittekst
-
+                        Console.WriteLine("\n\nBye bye. (lees melodisch)");
+                        Console.WriteLine("\nDruk op een toets om af te sluiten");
+                        Console.ReadKey();
                     }
                     else
                     {
@@ -82,7 +94,7 @@ namespace _16_TomA_Kassa
                     Console.Clear();
 
                     // Foutmelding 
-                    Console.WriteLine("\n\nU gaf geen getal in.");
+                    Console.WriteLine("\n\nU gaf geen juist getal in.");
                     Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu");
                     Console.ReadKey();
                 }

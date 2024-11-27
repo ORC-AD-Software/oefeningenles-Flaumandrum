@@ -110,7 +110,7 @@ namespace _13_TomA_aantalDagen
                             if(_vandaag < _dagGbr)
                             {
                                 // Stap 5: Bereken het verschil met vandaag + toon
-                                _verschil = _dagGbr - _vandaag.add;
+                                _verschil = _dagGbr - _vandaag;
 
                                 // Toon de juiste tekst aan de gebruiker
                                 Console.WriteLine($"U moet nog {_verschil.Days} dagen wachten eer het deze dag is.");

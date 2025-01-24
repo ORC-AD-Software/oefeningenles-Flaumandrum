@@ -50,6 +50,8 @@ namespace _17_TomA_GegArray
 
             }
 
+            // 
+
             Console.WriteLine("\nDruk op enter om de getallen te bekijken via een ander soort lus.");
             Console.ReadKey();
             Console.Clear();
@@ -62,6 +64,8 @@ namespace _17_TomA_GegArray
 
             Console.WriteLine("\nDruk op enter om af te sluiten.");
             Console.ReadKey();
+
+
         }
     }
 }

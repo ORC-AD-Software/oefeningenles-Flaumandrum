@@ -20,6 +20,10 @@ namespace _19_TomA_Lln
 
             // Velden 
             byte _keuze = 0;
+            string[] _namen = new string[0];
+            int _plaats = -1;
+            bool _herhalen = true;
+             
 
             // Programma 
             // Stap 1: Intro
@@ -42,29 +46,137 @@ namespace _19_TomA_Lln
                     Console.Write("\nUw keuze: ");
                     _keuze = byte.Parse(Console.ReadLine());
 
+
+                    //Scherm leegmaken 
+                    Console.Clear();
+
                     //Als 1: (klas aanmaken)
-                    //Stap 4: Vraag aantal leerlingen + opslaan
+                    if (_keuze == 1)
+                    {
+                        do
+                        {
+                            //Scherm leegmaken 
+                            Console.Clear();
 
-                    //Stap 5: maar array aan
+                            try
+                            {
+
+                                //Stap 4: Vraag aantal leerlingen + opslaan
+                                Console.Write("Hoeveel leerlingen zitten er in jouw klas: ");
+                                int aantal = int.Parse(Console.ReadLine());
+
+                                //Stap 5: maar array aan
+                                _namen = new string[aantal];
+
+                                //Scherm leegmaken 
+                                Console.Clear();
+
+                                // Begeleiden gebruiker 
+                                Console.WriteLine("Deze klas werd aangemaakt.");
+                                Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
+
+                                _herhalen = false;
+
+                            }
+                            catch
+                            {
+                                //Scherm leegmaken 
+                                Console.Clear();
+
+                                // Foutmelding 
+                                Console.WriteLine("U gaf geen juist getal in.");
+                                Console.WriteLine("\nDruk op een toets om opnieuw te proberen.");
+                                Console.ReadKey();
+                            }
+                        } while (_herhalen);
+                    }
+
+
                     //Als 2: (namen ingeven)
-                    //Stap 6: Check of er een klas is aangemaakt
-                    //Als ok:
-                    //Stap 7: zoek een lege plaats
+                    else if (_keuze == 2)
+                    {
+                        //Stap 6: Check of er een klas is aangemaakt
+                        //Als ok:
+                        if (_namen.Length != 0)
+                        {
+                            //Stap 7: zoek een lege plaats
+                            for (int i = 0; i < _namen.Length; i++)
+                            {
+                                if (_namen[i] == null)
+                                {
+                                    _plaats = i;
+                                    break;  // stopt de lus
+                                }
+                            }
+                            //    Als ok
+                            if (_plaats != -1)
+                            {
+                                //Stap 8: Vraag naam +opslaan(op lege plaats)
+                                Console.Write("Geef de naam van de leerling die u wilt invoeren: ");
+                                _namen[_plaats] = Console.ReadLine();
+                               
+                                // begeleiden 
+                                Console.WriteLine("De leerling werd opgeslagen.");
+                                Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
 
-                    //    Als ok
-                    //Stap 8: Vraag naam +opslaan(op lege plaats)
+                            }
 
-                    //                    Als NOK
+                            // Als NOK
+                            else
+                            {
+                                //Scherm leegmaken 
+                                Console.Clear();
 
-                    //                        Stap 9: Foutmelding
-                    //            Als NOK
-                    //Stap 10: foutmelding
-                    //            Als 3: (tonen)
-                    //            Stap 11: Toon leerlingen
+                                //Stap 9: Foutmelding 
+                                Console.WriteLine("Er is geen plaats meer in deze klas.");
+                                Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
+                            }
 
-                    //    Als 4 : (afsluiten)
-                    //        Stap 12: Toon eindtekst
+                        }
 
+                        // Als NOK
+                        else
+                        {
+                             //Scherm leegmaken 
+                            Console.Clear();
+
+                            //Stap 10: Foutmelding 
+                            Console.WriteLine("Er werd nog geen klas aangemaakt.");
+                            Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                            Console.ReadKey();
+                        }
+                        
+                    }
+
+                    // Als 3: (tonen)
+                    else if (_keuze == 3)
+                    {
+                        // Stap 11: Toon leerlingen
+                    }
+                    
+                    // Als 4 : (afsluiten)
+                    else if (_keuze == 4)
+                    {
+                        // Stap 12: Toon eindtekst
+                        Console.WriteLine("Bedankt en tot de volgende keer.");
+                        Console.WriteLine("\nDruk op enter om af te sluiten.");
+                        Console.ReadKey();
+
+                    }
+                    
+                    else
+                    {
+                        //Scherm leegmaken 
+                        Console.Clear();
+
+                        // Foutmelding 
+                        Console.WriteLine("U gaf geen juiste keuze in.");
+                        Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                        Console.ReadKey();
+                    }
                 }
                 catch
                 {

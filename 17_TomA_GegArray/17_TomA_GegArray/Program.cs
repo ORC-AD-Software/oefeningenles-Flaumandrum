@@ -43,7 +43,7 @@ namespace _17_TomA_GegArray
 
             // reset de teller 
             _teller = 0;
-            while (_teller < 9)
+            while (_teller < 10)
             {
                 Console.WriteLine(_getallen[_teller]);
                 _teller++;

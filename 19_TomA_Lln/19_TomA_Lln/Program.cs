@@ -100,6 +100,9 @@ namespace _19_TomA_Lln
                         //Als ok:
                         if (_namen.Length != 0)
                         {
+                            // reset plaats
+                            _plaats = -1;
+
                             //Stap 7: zoek een lege plaats
                             for (int i = 0; i < _namen.Length; i++)
                             {
@@ -108,6 +111,7 @@ namespace _19_TomA_Lln
                                     _plaats = i;
                                     break;  // stopt de lus
                                 }
+                                
                             }
                             //    Als ok
                             if (_plaats != -1)
@@ -115,11 +119,15 @@ namespace _19_TomA_Lln
                                 //Stap 8: Vraag naam +opslaan(op lege plaats)
                                 Console.Write("Geef de naam van de leerling die u wilt invoeren: ");
                                 _namen[_plaats] = Console.ReadLine();
-                               
+
+                                //Scherm leegmaken 
+                                Console.Clear();
+
                                 // begeleiden 
                                 Console.WriteLine("De leerling werd opgeslagen.");
                                 Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
                                 Console.ReadKey();
+
 
                             }
 
@@ -155,6 +163,25 @@ namespace _19_TomA_Lln
                     else if (_keuze == 3)
                     {
                         // Stap 11: Toon leerlingen
+                        Console.WriteLine("Hier zijn alle leerlingen:\n");
+
+                        foreach(string s in _namen)
+                        {
+                            if (s != null)
+                            {
+                                Console.WriteLine(s);
+                            }
+                            else
+                            {
+                                Console.WriteLine("lege plaats");
+                            }
+                            
+
+                        }
+
+                        // begeleiding
+                        Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                        Console.ReadKey();
                     }
                     
                     // Als 4 : (afsluiten)

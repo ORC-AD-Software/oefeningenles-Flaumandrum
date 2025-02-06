@@ -77,7 +77,15 @@ namespace _20_TomA_Vliegtuig
                             // Stap 5: Toon de legen plaatsen 
                             for(int i = 0; i<_vliegtuig.Count() ; i++)
                             {
-                                Console.Write($"plaats {(i + 1)}:");
+                                if(i<9)
+                                {
+                                    Console.Write($"plaats 0{(i + 1)}:");
+                                }
+                                else
+                                {
+                                    Console.Write($"plaats {(i + 1)}:");
+                                }
+                                
                                 // kijk of de plaats leeg is
                                 if (_vliegtuig[i] == null)
                                 {
@@ -153,17 +161,26 @@ namespace _20_TomA_Vliegtuig
                         {
                             for(int i = 0; i < _vliegtuig.Count(); i++)
                             {
-                                
+
+                                if (i < 9)
+                                {
+                                    Console.Write($"plaats 0{(i + 1)}:");
+                                }
+                                else
+                                {
+                                    Console.Write($"plaats {(i + 1)}:");
+                                }
+
                                 // kijk of de plaats leeg is
                                 if (_vliegtuig[i] == null)
                                 {
                                     // Toon het nummer van de plaats
-                                    Console.WriteLine($"{i + 1}: _________");
+                                    Console.WriteLine(" _________");
                                 }
                                 else
                                 {
                                     // toon de naam
-                                    Console.WriteLine($"{i + 1}: {_vliegtuig[i]}");
+                                    Console.WriteLine($" {_vliegtuig[i]}");
                                 }
                             }
 

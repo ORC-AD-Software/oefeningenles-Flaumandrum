@@ -111,11 +111,33 @@ namespace _23_TomA_Boodschappenlijst2Lagen
                     //Als 3: Verwijderen
                     else if (keuze == 3)
                     {
-                        //Zoek item
+                        //Vraag item
+                        Console.Write("Geef het item dat u wilt verwijderen: ");
+                        string item = Console.ReadLine();
+                        //Zoek item                        
+                        plaats = ZoekInArray(item);
+
+
                         //Als gevonden:
-                        //Verwijderen uit array
+                        if (plaats != -1)
+                        {
+                            //Verwijderen uit array
+                            Toevoegen(null, plaats);
+
+                            // Begeleiden
+                            Console.WriteLine("\n\nDit item werd verwijderd.");
+                            Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                            Console.ReadKey();
+                        }
+
                         //Als niet gevonden
-                        //Foutcode
+                        else
+                        {
+                            // Foutcode
+                            Console.WriteLine("Dit itme werd niet gevonden.");
+                            Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu.");
+                            Console.ReadKey();
+                        }
                     }
 
                     //Als 4: Tonen

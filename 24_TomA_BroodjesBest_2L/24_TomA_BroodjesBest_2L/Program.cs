@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,15 +27,110 @@ namespace _24_TomA_BroodjesBest_2L
         // GUI
         static void Main(string[] args)
         {
-            
+            // variabelen
+            byte keuze = 0;
 
-            
+            // Intro
+            Console.WriteLine("Welkom bij ons programma waarmee je de broodjesbestelling van de klas kan bijhouden");
+            Console.WriteLine("\nDruk op enter om verder te gaan");
 
-            
+            Console.ReadKey();
+            do {
+                // lees scherm
+                Console.Clear();
 
-            
+                // Keuzemenu(Toevoegen, Aanpassen, Verwijderen, Tonen 1 persoon, Toon alles, Kies winnaar, Afsluiten)
+                Console.WriteLine("Maak uw keuze uit onderstaand menu:");
 
+                Console.WriteLine("\n   1) Toevoegen bestelling" +
+                    "\n   2) Aanpassen bestelling \n   3) Verwijderen bestelling " +
+                    "\n   4) Toon de bestelling van 1 persoon " +
+                    "\n   5) Toon de volledige bestelling \n   6) Kies een winnaar " +
+                    "\n   7) Afsluiten");
 
+                try {
+                    // Vraag keuze +opslaan
+                    Console.Write("\nMaak uw keuze: ");
+                    keuze = byte.Parse(Console.ReadLine());
+
+                    // lees scherm
+                    Console.Clear();
+
+                    // Als 1: Toevoegen
+                    if (keuze == 1)
+                    {
+                        // Zoek lege plaats +opslaan
+                        //   Als ok: 
+                        //      Vraag naam +opslaan
+                        //      Vraag broodje +opslaan
+                        //      Vraag prijs +opslaan
+                        //      Opslaan in array
+                        //   Als NOK
+                        //      Foutcode
+                    }
+                    // Als 2: Aanpassen
+                    else if (keuze == 2)
+                    {
+                        // Vraag naam + opslaan
+                        // Zoek item
+                        //   Als gevonden:
+                        //     Vraag naam +opslaan
+                        //     Vraag broodje +opslaan
+                        //     Vraag prijs +opslaan
+                        //     Opslaan in array
+                        // Als niet gevonden
+                        //      Foutcode
+                    }
+                    // Als 3: Verwijderen
+                    else if (keuze == 3)
+                    {
+                        // Vraag naam + opslaan
+                        // Zoek item
+                        //   Als gevonden: 
+                        //      Verwijderen uit array
+                        //   Als niet gevonden
+                        //      Foutcode
+                    }
+                    // Als 4: Toon gegevens van 1 persoon
+                    else if (keuze == 4)
+                    {
+                        // Vraag naam + opslaan
+                        // Zoek item
+                        //   Als gevonden: 
+                        //      Toon gegevens
+                        //   Als niet gevonden
+                        //      Foutcode
+                    }
+                    // Als 5: Tonen
+                    else if (keuze == 5)
+                    {
+                        //    Toon lijst
+                    }
+                    // Als 6: Kies winnaar
+                    else if (keuze == 6)
+                    {
+                        //    Toon winnaar
+                    }
+                    // Als 7: Afsluiten
+                    else if (keuze == 7)
+                    {
+                    }
+                    // Als geen van bovenstaande
+                    else
+                    {
+                    }
+                }
+                catch 
+                {
+                    // leeg scherm
+                    Console.Clear();
+
+                    // Foutmelding
+                    Console.WriteLine("U gaf geen getal in. \nDruk op enter en probeer opnieuw");
+                    Console.ReadKey();
+                }
+            } 
+            while (keuze != 7);
         }
 
         //Business

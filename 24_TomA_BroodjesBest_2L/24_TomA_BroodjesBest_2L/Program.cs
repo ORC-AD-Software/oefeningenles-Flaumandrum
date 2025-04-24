@@ -29,6 +29,9 @@ namespace _24_TomA_BroodjesBest_2L
         {
             // variabelen
             byte keuze = 0;
+            string naamPersoon = null;
+            string broodjePersoon = null;
+            Double prijsBroodje = 0;
 
             // Intro
             Console.WriteLine("Welkom bij ons programma waarmee je de broodjesbestelling van de klas kan bijhouden");
@@ -60,13 +63,32 @@ namespace _24_TomA_BroodjesBest_2L
                     if (keuze == 1)
                     {
                         // Zoek lege plaats +opslaan
+                        int ontvIndex = ZoekInArray(null);
+
                         //   Als ok: 
-                        //      Vraag naam +opslaan
-                        //      Vraag broodje +opslaan
-                        //      Vraag prijs +opslaan
-                        //      Opslaan in array
+                        if (ontvIndex != -1) 
+                        {
+                            //      Vraag naam +opslaan
+                            Console.Write("\nGeef de naam van de persoon: ");
+                            naamPersoon = Console.ReadLine();
+
+                            //      Vraag broodje +opslaan
+                            Console.Write("\nGeef het boordje van deze persoon: ");
+                            broodjePersoon = Console.ReadLine();
+
+                            //      Vraag prijs +opslaan
+                            Console.Write("\nGeef de prijs in van dit broodje");
+                            prijsBroodje = double.Parse(Console.ReadLine().Replace(",","."));
+
+                            //      Opslaan in array
+                        }
                         //   Als NOK
-                        //      Foutcode
+                        else 
+                        {
+                            // Foutmelding
+                            Console.WriteLine("Er is geen plaats meer in de array. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
                     }
                     // Als 2: Aanpassen
                     else if (keuze == 2)
@@ -105,19 +127,33 @@ namespace _24_TomA_BroodjesBest_2L
                     else if (keuze == 5)
                     {
                         //    Toon lijst
+                        Console.WriteLine(ToonLijst());
                     }
                     // Als 6: Kies winnaar
                     else if (keuze == 6)
                     {
                         //    Toon winnaar
+                        Console.WriteLine(WillekeurigeWinnaar());
                     }
                     // Als 7: Afsluiten
                     else if (keuze == 7)
                     {
+                        //    Afsluiten
+                        Console.WriteLine("Bedankt voor het gebruiken van ons programma. Tot de volgende keer!");
+
+                        // begeleiden
+                        Console.WriteLine("\nDruk op enter om af te sluiten");
+                        Console.ReadKey();
                     }
                     // Als geen van bovenstaande
                     else
                     {
+                        // leeg scherm
+                        Console.Clear();
+
+                        // Foutmelding
+                        Console.WriteLine("U gaf geen juiste keuze in. \nDruk op enter en probeer opnieuw");
+                        Console.ReadKey();
                     }
                 }
                 catch 

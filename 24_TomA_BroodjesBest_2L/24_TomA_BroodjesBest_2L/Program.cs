@@ -78,7 +78,7 @@ namespace _24_TomA_BroodjesBest_2L
                             broodjePersoon = Console.ReadLine();
 
                             // Vraag prijs +opslaan
-                            Console.Write("\nGeef de prijs in van dit broodje");
+                            Console.Write("\nGeef de prijs in van dit broodje: ");
                             prijsBroodje = double.Parse(Console.ReadLine().Replace(".", ","));
 
                             // Opslaan in array
@@ -121,7 +121,7 @@ namespace _24_TomA_BroodjesBest_2L
                             broodjePersoon = Console.ReadLine();
 
                             // Vraag prijs +opslaan
-                            Console.Write("\nGeef de prijs in van dit broodje");
+                            Console.Write("\nGeef de prijs in van dit broodje: ");
                             prijsBroodje = double.Parse(Console.ReadLine().Replace(".", ","));
 
                             // Opslaan in array
@@ -176,7 +176,7 @@ namespace _24_TomA_BroodjesBest_2L
                     else if (keuze == 4)
                     {
                         // Vraag naam + opslaan
-                        Console.Write("\nGeef de naam van de persoon die u wilt verwijderen: ");
+                        Console.Write("\nGeef de naam van de persoon waarvan u de gegevens wilt zien: ");
                         naamPersoon = Console.ReadLine();
 
                         // Zoek item
@@ -300,7 +300,16 @@ namespace _24_TomA_BroodjesBest_2L
 
             for (int i = 0; i < _naam.Length; i++)
             {
-                antwoord += $" {(i + 1).ToString()}) {_naam[i]} : {_broodje[i]} prijs: {_prijs[i].ToString()}\n";
+                if (_naam[i]!= null)
+                {
+                    antwoord += $" {(i + 1).ToString()}) {_naam[i]} : {_broodje[i]} prijs: {_prijs[i].ToString()}\n";
+
+                }
+                else
+                {
+                    antwoord += $" {(i + 1).ToString()}) \n";
+
+                }
             }
 
             return antwoord;

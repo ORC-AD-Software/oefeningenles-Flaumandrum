@@ -67,24 +67,32 @@ namespace _24_TomA_BroodjesBest_2L
                         int ontvIndex = ZoekInArray(null);
 
                         //   Als ok: 
-                        if (ontvIndex != -1) 
+                        if (ontvIndex != -1)
                         {
-                            //      Vraag naam +opslaan
+                            // Vraag naam +opslaan
                             Console.Write("\nGeef de naam van de persoon: ");
                             naamPersoon = Console.ReadLine();
 
-                            //      Vraag broodje +opslaan
+                            // Vraag broodje +opslaan
                             Console.Write("\nGeef het boordje van deze persoon: ");
                             broodjePersoon = Console.ReadLine();
 
-                            //      Vraag prijs +opslaan
+                            // Vraag prijs +opslaan
                             Console.Write("\nGeef de prijs in van dit broodje");
-                            prijsBroodje = double.Parse(Console.ReadLine().Replace(",","."));
+                            prijsBroodje = double.Parse(Console.ReadLine().Replace(".", ","));
 
-                            //      Opslaan in array
+                            // Opslaan in array
+                            Toevoegen(naamPersoon, broodjePersoon, prijsBroodje, ontvIndex);
+
+                            // lees scherm
+                            Console.Clear();
+
+                            // begeleid de gebruiker 
+                            Console.WriteLine("Deze gegevens werden opgeslagen. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
                         }
                         //   Als NOK
-                        else 
+                        else
                         {
                             // Foutmelding
                             Console.WriteLine("Er is geen plaats meer in de array. \nDruk op enter om terug te keren naar het hoofdmenu");
@@ -95,46 +103,118 @@ namespace _24_TomA_BroodjesBest_2L
                     else if (keuze == 2)
                     {
                         // Vraag naam + opslaan
+                        Console.Write("\nGeef de naam van de persoon die u wilt aanpassen: ");
+                        naamPersoon = Console.ReadLine();
+
                         // Zoek item
+                        int ontvIndex = ZoekInArray(naamPersoon);
+
                         //   Als gevonden:
-                        //     Vraag naam +opslaan
-                        //     Vraag broodje +opslaan
-                        //     Vraag prijs +opslaan
-                        //     Opslaan in array
+                        if (ontvIndex != -1)
+                        {
+                            // Vraag naam +opslaan
+                            Console.Write("\nGeef de naam van de persoon: ");
+                            naamPersoon = Console.ReadLine();
+
+                            // Vraag broodje +opslaan
+                            Console.Write("\nGeef het boordje van deze persoon: ");
+                            broodjePersoon = Console.ReadLine();
+
+                            // Vraag prijs +opslaan
+                            Console.Write("\nGeef de prijs in van dit broodje");
+                            prijsBroodje = double.Parse(Console.ReadLine().Replace(".", ","));
+
+                            // Opslaan in array
+                            Toevoegen(naamPersoon, broodjePersoon, prijsBroodje, ontvIndex);
+
+                            // lees scherm
+                            Console.Clear();
+
+                            // begeleid de gebruiker 
+                            Console.WriteLine("Deze gegevens werden overschreven. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
                         // Als niet gevonden
-                        //      Foutcode
+                        else
+                        {
+                            // Foutmelding
+                            Console.WriteLine("Deze naam werd niet gevonden. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
                     }
                     // Als 3: Verwijderen
                     else if (keuze == 3)
                     {
                         // Vraag naam + opslaan
+                        Console.Write("\nGeef de naam van de persoon die u wilt verwijderen: ");
+                        naamPersoon = Console.ReadLine();
+
                         // Zoek item
-                        //   Als gevonden: 
-                        //      Verwijderen uit array
-                        //   Als niet gevonden
-                        //      Foutcode
+                        int ontvIndex = ZoekInArray(naamPersoon);
+
+                        //   Als gevonden:
+                        if (ontvIndex != -1)
+                        {
+                            Toevoegen(null, null, 0, ontvIndex);
+
+                            // lees scherm
+                            Console.Clear();
+
+                            // begeleid de gebruiker 
+                            Console.WriteLine("Deze gegevens werden verwijderd. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
+                        // Als niet gevonden
+                        else
+                        {
+                            // Foutmelding
+                            Console.WriteLine("Deze naam werd niet gevonden. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
                     }
                     // Als 4: Toon gegevens van 1 persoon
                     else if (keuze == 4)
                     {
                         // Vraag naam + opslaan
+                        Console.Write("\nGeef de naam van de persoon die u wilt verwijderen: ");
+                        naamPersoon = Console.ReadLine();
+
                         // Zoek item
+                        int ontvIndex = ZoekInArray(naamPersoon);
+
                         //   Als gevonden: 
-                        //      Toon gegevens
-                        //   Als niet gevonden
-                        //      Foutcode
+                        if (ontvIndex != -1)
+                        {
+                            //      Toon gegevens
+                            Console.WriteLine(Toon1Gegev(ontvIndex));
+                            Console.WriteLine("\n\nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
+                        // Als niet gevonden
+                        else
+                        {
+                            // Foutmelding
+                            Console.WriteLine("Deze naam werd niet gevonden. \nDruk op enter om terug te keren naar het hoofdmenu");
+                            Console.ReadKey();
+                        }
                     }
                     // Als 5: Tonen
                     else if (keuze == 5)
                     {
                         //    Toon lijst
                         Console.WriteLine(ToonLijst());
+
+                        Console.WriteLine("\n\nDruk op enter om terug te keren naar het hoofdmenu");
+                        Console.ReadKey();
                     }
                     // Als 6: Kies winnaar
                     else if (keuze == 6)
                     {
                         //    Toon winnaar
                         Console.WriteLine(WillekeurigeWinnaar());
+
+                        Console.WriteLine("\n\nDruk op enter om terug te keren naar het hoofdmenu");
+                        Console.ReadKey();
                     }
                     // Als 7: Afsluiten
                     else if (keuze == 7)

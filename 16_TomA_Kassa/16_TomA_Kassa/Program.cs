@@ -57,17 +57,72 @@ namespace _16_TomA_Kassa
                         _cash = Double.Parse(Console.ReadLine().Replace(".", ","));
 
                         //Stap 6: Bereken het restbedrag + opslaan
-                        _rest = _totaal - _cash;
+                        _rest = _cash - _totaal;
 
                         //Stap 7: Bereken voor elk mogelijk briefje en muntstuk hoeveel de gebruiker moet teruggeven
                         //Stap 8: En toon het juiste antwoord
 
-                        // voor 200
-                        Console.WriteLine($"{Math.Floor(_rest/200)} briefjes van 200");
-
                         //Stap 9: Bereken daarna het nieuwe restbedrag
+
+                        // voor 200
+                        Console.WriteLine($"{Math.Floor(_rest/200)} briefjes van 200");                    
                         //_rest = _rest - (Math.Floor(_rest / 200) * 200);
                         _rest = _rest % 200;
+
+                        // voor 100
+                        Console.WriteLine($"{Math.Floor(_rest / 100)} briefjes van 100");
+                        _rest = _rest % 100;
+
+                        // voor 50
+                        Console.WriteLine($"{Math.Floor(_rest / 50)} briefjes van 50");
+                        _rest = _rest % 50;
+
+                        // voor 20
+                        Console.WriteLine($"{Math.Floor(_rest / 20)} briefjes van 20");
+                        _rest = _rest % 20;
+
+                        // voor 10
+                        Console.WriteLine($"{Math.Floor(_rest / 10)} briefjes van 10");
+                        _rest = _rest % 10;
+
+                        // voor 5
+                        Console.WriteLine($"{Math.Floor(_rest / 5)} briefjes van 5");
+                        _rest = _rest % 5;
+
+
+                        // voor 2
+                        Console.WriteLine($"{Math.Floor(_rest / 2)} stukken van 2");
+                        _rest = _rest % 2;
+
+                        // voor 1
+                        Console.WriteLine($"{Math.Floor(_rest / 1)} stukken van 1");
+                        _rest = _rest % 1;
+
+                        // voor 0.50
+                        Console.WriteLine($"{Math.Floor(_rest / 0.50)} stukken van 0.50");
+                        _rest = _rest % 0.50;
+
+                        // voor 0.20
+                        Console.WriteLine($"{Math.Floor(_rest / 0.20)} stukken van 0.20");
+                        _rest = _rest % 0.20;
+
+                        // voor 0.10
+                        Console.WriteLine($"{Math.Floor(_rest / 0.10)} stukken van 0.10");
+                        _rest = _rest % 0.10;
+
+                        // voor 0.05
+                        Console.WriteLine($"{Math.Floor(_rest / 0.05)} stukken van 0.05");
+                        _rest = _rest % 0.05;
+
+                        // voor 0.02
+                        Console.WriteLine($"{Math.Floor(_rest / 0.02)} stukken van 0.02");
+                        _rest = _rest % 0.02;
+
+                        // voor 0.01
+                        Console.WriteLine($"{Math.Floor((_rest+0.00000001) / 0.01)} stukken van 0.01");
+
+                        Console.WriteLine("\nDruk op een toets om terug te keren naar het hoofdmenu");
+                        Console.ReadKey();
 
                     }
                     //Als 2: Afsluiten

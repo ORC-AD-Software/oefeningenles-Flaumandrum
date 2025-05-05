@@ -21,6 +21,7 @@ namespace _24_TomA_BroodjesBest_2L
         static String[] _broodje = new String[5];
         static Double[] _prijs = new Double[5];
         static int _indexWinnaar = -1;
+        
 
 
 
@@ -241,10 +242,22 @@ namespace _24_TomA_BroodjesBest_2L
         /// <returns></returns>
         static String WillekeurigeWinnaar()
         {
-           if(_indexWinnaar != -1)
+            Boolean herhalen = true;
+
+            if (_indexWinnaar == -1)
             {
-                Random rnd = new Random();
-                _indexWinnaar = rnd.Next(0, _naam.Length);
+                do
+                {
+                    Random rnd = new Random();
+                    _indexWinnaar = rnd.Next(0, _naam.Length);
+
+                    if (_naam[_indexWinnaar] != null)
+                    {
+                        herhalen = false;
+                        _prijs[_indexWinnaar] -= 2;
+                    }
+                }
+                while (herhalen);
             }
 
 

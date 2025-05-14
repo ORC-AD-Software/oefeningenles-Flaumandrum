@@ -16,5 +16,10 @@ namespace _25_TomA_WFA_Oef2
         {
             InitializeComponent();
         }
+
+        private void btnAfsluiten_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -18,5 +18,9 @@ namespace _25_TomA_WFA_Oef2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmStart());
         }
+
+        // Tom Adriaens 
+        // 08/05/2025
+        // Oefening 2
     }
 }

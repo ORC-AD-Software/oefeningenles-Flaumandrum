@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,10 +47,61 @@ namespace _26_TomLln
 
             for (int i = 0; i < _namen.Count(); i++)
             {
-                antwoord += _namen[i] + "\n";
+                antwoord += _namen[i] + Environment.NewLine;
             }
 
             return antwoord;
         }
+
+        /// <summary>
+        /// Krijgt de oude naam en verandert die in een nieuwe naam
+        /// </summary>
+        /// <param name="ontvOudenaam"></param>
+        /// <param name="ontvNieuweNaam"></param>
+        static public bool Aanpassen(string ontvOudeNaam, string ontvNieuweNaam)
+        {
+            // zoek de index op van de oude naam 
+            int index = _namen.IndexOf(ontvOudeNaam);
+
+            // Kijk of de naam gevonden is
+            if (index != -1)
+            {
+                // verander het gegegven op deze index
+                _namen[index]= ontvNieuweNaam;
+
+                return true;
+            }
+            // stuur anders een fout 
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        ///  ontvant een naam en verwijdert deze uit de array
+        /// </summary>
+        /// <param name="ontvNaam"></param>
+        static public bool Verwijderen(string ontvNaam)
+        {
+            // zoek de index op van de naam 
+            int index = _namen.IndexOf(ontvNaam);
+
+            // Kijk of de naam gevonden is
+            if (index != -1) 
+            { 
+                // verwijder het gegeven op deze index
+                _namen.RemoveAt(index);
+
+                return true;
+            }
+            // stuur anders een fout 
+            else 
+            {
+                return false; 
+            }
+
+        }
+
     }
 }

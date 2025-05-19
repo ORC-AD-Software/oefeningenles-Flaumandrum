@@ -21,5 +21,11 @@ namespace _26_TomLln
         {
             Close();
         }
+
+        private void FrmTonen_Load(object sender, EventArgs e)
+        {
+            // vraag de gegevens op uit de business en toon de gegevens in de textbox.
+            txtToon.Text = Program.ToonLijst();
+        }
     }
 }

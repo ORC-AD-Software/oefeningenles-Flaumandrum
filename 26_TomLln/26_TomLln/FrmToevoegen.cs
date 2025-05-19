@@ -21,5 +21,29 @@ namespace _26_TomLln
         {
             Close();
         }
+
+        private void btnToevoegen_Click(object sender, EventArgs e)
+        {
+            // Kijk of er tekst in de textbox staat
+            if (txtNaam.Text != "")
+            {
+                // Zet de input van de textbox om naar een variabele
+                String naam = txtNaam.Text;
+
+                // stuur de variabele door naar de business
+                Program.Toevoegen(naam);
+
+                // begeleiden van gebruiker
+                MessageBox.Show("Deze naam werd toegevoegd.", "Great succes!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // reset form
+                txtNaam.Clear();
+            }
+            else 
+            {
+                // foutmelding
+                MessageBox.Show("U gaf niets in.\nProbeer opnieuw.", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
     }
 }

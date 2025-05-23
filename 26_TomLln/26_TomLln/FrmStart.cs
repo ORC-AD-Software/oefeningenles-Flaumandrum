@@ -52,5 +52,35 @@ namespace _26_TomLln
         {
             Close();
         }
+
+        private void btnAanpassen_Click(object sender, EventArgs e)
+        {
+            // nieuw form maken 
+            FrmAanpassen nieuwFrm = new FrmAanpassen();
+
+            // oud form hiden 
+            Hide();
+
+            // nieuw form tonen
+            nieuwFrm.ShowDialog();
+
+            // oud form tonen
+            Show();
+        }
+
+        private void btnVerwijderen_Click(object sender, EventArgs e)
+        {
+            // nieuw form maken 
+            FrmVerwijderen nieuwFrm = new FrmVerwijderen();
+
+            // oud form hiden 
+            Hide();
+
+            // nieuw form tonen
+            nieuwFrm.ShowDialog();
+
+            // oud form tonen
+            Show();
+        }
     }
 }

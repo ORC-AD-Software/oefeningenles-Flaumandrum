@@ -51,5 +51,35 @@ namespace _26_TomLln
 
             return antwoord;
         }
+
+        /// <summary>
+        /// Krijgt de nieuwe naam uit de GUI en krijgt ook de plaats waar de oude naam staat 
+        /// De oude naam wordt vervangen door de nieuwe naam
+        /// </summary>
+        /// <param name="ontvIndex"></param>
+        /// <param name="ontvNaam"></param>
+        static public void Aanpassen(int ontvIndex, string ontvNaam)
+        { 
+            _namen[ontvIndex] = ontvNaam;
+        }
+
+        /// <summary>
+        /// Verwijder een naam uit de lijst
+        /// </summary>
+        /// <param name="index"></param>
+        static public void Verwijderen(int ontvIndex)
+        {
+            _namen.RemoveAt(ontvIndex);
+        }
+
+        /// <summary>
+        /// Geeft de lijst van namen terug
+        /// </summary>
+        /// <returns></returns>
+        static public List<String> StuurLijstNamenDoor()
+        {
+            return _namen;
+        }
     }
+
 }

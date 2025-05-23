@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAanpassen.Designer.cs">
+      <DependentUpon>FrmAanpassen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +70,17 @@
     <Compile Include="FrmTonen.Designer.cs">
       <DependentUpon>FrmTonen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerwijderen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerwijderen.Designer.cs">
+      <DependentUpon>FrmVerwijderen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAanpassen.resx">
+      <DependentUpon>FrmAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStart.resx">
       <DependentUpon>FrmStart.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTonen.resx">
       <DependentUpon>FrmTonen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerwijderen.resx">
+      <DependentUpon>FrmVerwijderen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

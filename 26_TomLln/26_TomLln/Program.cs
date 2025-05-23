@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,7 +47,7 @@ namespace _26_TomLln
 
             for (int i = 0; i < _namen.Count(); i++)
             {
-                antwoord += _namen[i] + "\n";
+                antwoord += _namen[i] + Environment.NewLine;
             }
 
             return antwoord;

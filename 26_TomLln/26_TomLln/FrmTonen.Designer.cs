@@ -77,6 +77,7 @@
             this.Name = "FrmTonen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Toon leerlingen";
+            this.Load += new System.EventHandler(this.FrmTonen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

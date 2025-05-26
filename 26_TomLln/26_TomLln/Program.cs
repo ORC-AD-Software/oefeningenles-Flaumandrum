@@ -70,7 +70,9 @@ namespace _26_TomLln
         /// <param name="index"></param>
         static public void Verwijderen(int ontvIndex)
         {
-            _namen.RemoveAt(ontvIndex);
+            
+                _namen.RemoveAt(ontvIndex);
+           
         }
 
         /// <summary>

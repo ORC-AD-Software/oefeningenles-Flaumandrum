@@ -33,7 +33,7 @@
             this.txtNaam = new System.Windows.Forms.TextBox();
             this.lblNaam = new System.Windows.Forms.Label();
             this.btnAnnuleren = new System.Windows.Forms.Button();
-            this.btnToevoegen = new System.Windows.Forms.Button();
+            this.btnAanpassen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbKiesLeerling
@@ -43,6 +43,7 @@
             this.cmbKiesLeerling.Name = "cmbKiesLeerling";
             this.cmbKiesLeerling.Size = new System.Drawing.Size(326, 32);
             this.cmbKiesLeerling.TabIndex = 7;
+            this.cmbKiesLeerling.SelectedIndexChanged += new System.EventHandler(this.cmbKiesLeerling_SelectedIndexChanged);
             // 
             // lblKiesLln
             // 
@@ -79,14 +80,15 @@
             this.btnAnnuleren.UseVisualStyleBackColor = true;
             this.btnAnnuleren.Click += new System.EventHandler(this.btnAnnuleren_Click);
             // 
-            // btnToevoegen
+            // btnAanpassen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(16, 176);
-            this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(160, 50);
-            this.btnToevoegen.TabIndex = 8;
-            this.btnToevoegen.Text = "Toevoegen";
-            this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnAanpassen.Location = new System.Drawing.Point(16, 176);
+            this.btnAanpassen.Name = "btnAanpassen";
+            this.btnAanpassen.Size = new System.Drawing.Size(160, 50);
+            this.btnAanpassen.TabIndex = 8;
+            this.btnAanpassen.Text = "Aanpassen";
+            this.btnAanpassen.UseVisualStyleBackColor = true;
+            this.btnAanpassen.Click += new System.EventHandler(this.btnAanpassen_Click);
             // 
             // FrmAanpassen
             // 
@@ -97,14 +99,15 @@
             this.Controls.Add(this.txtNaam);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.btnAnnuleren);
-            this.Controls.Add(this.btnToevoegen);
+            this.Controls.Add(this.btnAanpassen);
             this.Controls.Add(this.cmbKiesLeerling);
             this.Controls.Add(this.lblKiesLln);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmAanpassen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aanpassen leerling";
+            this.Load += new System.EventHandler(this.FrmAanpassen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +120,6 @@
         private System.Windows.Forms.TextBox txtNaam;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Button btnAnnuleren;
-        private System.Windows.Forms.Button btnToevoegen;
+        private System.Windows.Forms.Button btnAanpassen;
     }
 }

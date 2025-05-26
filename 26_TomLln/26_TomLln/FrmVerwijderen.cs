@@ -37,5 +37,36 @@ namespace _26_TomLln
                 cmbKiesLeerling.Items.Add(s);
             }
         }
+
+        private void FrmVerwijderen_Load(object sender, EventArgs e)
+        {
+            VulCmb();
+        }
+
+        private void btnVerwijderen_Click(object sender, EventArgs e)
+        {
+            if (cmbKiesLeerling.SelectedIndex != -1)
+            {
+                // haal de index van het geselecteerde item op
+                int index = cmbKiesLeerling.SelectedIndex;
+
+                // Stuur dit door naar de juiste functie
+                 Program.Verwijderen(index);
+
+                // Begeleid de gebruiker
+                MessageBox.Show("Deze naam werd verwijderd.", "Great succes!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // reset het form
+                VulCmb();
+                cmbKiesLeerling.SelectedIndex = -1;
+                cmbKiesLeerling.Text = "";
+
+            }
+            else 
+            {
+                // foutmelding
+                MessageBox.Show("U selecteerde geen leerling.\nProbeer opnieuw.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
